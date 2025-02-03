@@ -1,5 +1,5 @@
 # Build an image that can serve mlflow models.
-FROM python:3.9.4-slim
+FROM python:3.9.16-slim
 
 RUN apt-get -y update && apt-get install -y --no-install-recommends nginx
 
@@ -8,7 +8,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends nginx
 WORKDIR /opt/mlflow
 
 # Install MLflow
-RUN pip install mlflow==2.19.0
+RUN pip install mlflow==2.20.1
 
 # Copy model to image and install dependencies
 COPY model_dir/ /opt/ml/model
@@ -22,7 +22,6 @@ ENV GUNICORN_CMD_ARGS="--timeout 60 -k gevent"
 # and files to allow for deployment to AWS Sagemaker Serverless Endpoints
 # (see https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html)
 RUN chmod o+rwX /opt/mlflow/
-RUN chgrp -R 0 /opt && chmod -R g=u /opt
 
 # clean up apt cache to reduce image size
 RUN rm -rf /var/lib/apt/lists/*

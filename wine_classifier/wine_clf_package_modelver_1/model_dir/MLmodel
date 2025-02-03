@@ -7,14 +7,14 @@ flavors:
     loader_module: mlflow.sklearn
     model_path: model.pkl
     predict_fn: predict
-    python_version: 3.9.4
+    python_version: 3.9.16
   sklearn:
     code: null
     pickled_model: model.pkl
     serialization_format: cloudpickle
-    sklearn_version: 1.5.2
-mlflow_version: 2.19.0
-model_size_bytes: 1058
-model_uuid: 164f0398ce6c4c09bf19192f49238cc9
-run_id: 54dac1664fd44687bf23844ee5b93bb1
-utc_time_created: '2025-01-30 16:37:55.811895'
+    sklearn_version: 1.4.2
+mlflow_version: 2.20.1
+model_size_bytes: 1060
+model_uuid: de4c845f03a14cafb8c30408d463e4c0
+run_id: bea23cbe288d4206b2dfb339d5db2653
+utc_time_created: '2025-02-03 12:22:18.479067'
